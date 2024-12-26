@@ -597,7 +597,24 @@
 // the 'fit_nonlinear_spindle.py' script solution. Used only when ENABLE_PIECEWISE_LINEAR_SPINDLE
 // is enabled. Make sure the constant values are exactly the same as the script solution.
 // NOTE: When N_PIECES < 4, unused RPM_LINE and RPM_POINT defines are not required and omitted.
-// 
+
+// CNCx2 800W
+#define N_PIECES 4
+#define RPM_MAX 24000
+#define RPM_MIN 1000
+#define RPM_POINT12 1013.5
+#define RPM_POINT23 6746.4
+#define RPM_POINT34 13402.7
+#define RPM_LINE_A1 1.000000e-02
+#define RPM_LINE_B1 -9.865427e+00
+#define RPM_LINE_A2 1.046588e-02
+#define RPM_LINE_B2 -9.393282e+00
+#define RPM_LINE_A3 1.051636e-02
+#define RPM_LINE_B3 -9.052692e+00
+#define RPM_LINE_A4 9.995496e-03
+#define RPM_LINE_B4 -1.603367e+01
+
+
 
 //Strom 755 
 #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.

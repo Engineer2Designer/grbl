@@ -27,6 +27,44 @@
 
 #ifndef defaults_h
 
+#ifdef DEFAULTS_CNCx2
+  // Grbl generic default settings. Should work across different machines.
+  #define DEFAULT_X_STEPS_PER_MM 800.0
+  #define DEFAULT_Y_STEPS_PER_MM 800.0
+  #define DEFAULT_Z_STEPS_PER_MM 3200.0
+  #define DEFAULT_X_MAX_RATE 1200.0 // mm/min
+  #define DEFAULT_Y_MAX_RATE 1200.0 // mm/min
+  #define DEFAULT_Z_MAX_RATE 300.0 // mm/min
+  #define DEFAULT_X_ACCELERATION (80.0*60*60) // 80*60*60 mm/min^2 = 80 mm/sec^2
+  #define DEFAULT_Y_ACCELERATION (80.0*60*60) // 80*60*60 mm/min^2 = 80 mm/sec^2
+  #define DEFAULT_Z_ACCELERATION (250.0*60*60) // 250*60*60 mm/min^2 = 250 mm/sec^2
+  #define DEFAULT_X_MAX_TRAVEL 314.0 // mm
+  #define DEFAULT_Y_MAX_TRAVEL 404.0 // mm
+  #define DEFAULT_Z_MAX_TRAVEL 112.0 // mm
+  #define DEFAULT_SPINDLE_RPM_MAX 24000.0 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 1000.0 // rpm
+  #define DEFAULT_STEP_PULSE_MICROSECONDS 10
+  #define DEFAULT_STEPPING_INVERT_MASK 0
+  #define DEFAULT_DIRECTION_INVERT_MASK 3
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STATUS_REPORT_MASK 1 // MPos enabled
+  #define DEFAULT_JUNCTION_DEVIATION 0.01 // mm
+  #define DEFAULT_ARC_TOLERANCE 0.001 // mm
+  #define DEFAULT_REPORT_INCHES 0 // false
+  #define DEFAULT_INVERT_ST_ENABLE 0 // false
+  #define DEFAULT_INVERT_LIMIT_PINS 0 // false
+  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // false
+  #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
+  #define DEFAULT_INVERT_PROBE_PIN 0 // false
+  #define DEFAULT_LASER_MODE 0 // false
+  #define DEFAULT_HOMING_ENABLE 1  // false
+  #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
+  #define DEFAULT_HOMING_FEED_RATE 50.0 // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 500.0 // mm/min
+  #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
+  #define DEFAULT_HOMING_PULLOFF 2.0 // mm
+#endif
+
 #ifdef DEFAULTS_STORM
   // Grbl generic default settings. Should work across different machines.
   #define DEFAULT_X_STEPS_PER_MM 3200.0
