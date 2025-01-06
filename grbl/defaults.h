@@ -27,7 +27,61 @@
 
 #ifndef defaults_h
 
-#ifdef DEFAULTS_STORM
+#ifdef DEFAULTS_CNCx2
+  // Grbl generic default settings. Should work across different machines.
+  #define DEFAULT_X_STEPS_PER_MM 800.0
+  #define DEFAULT_Y_STEPS_PER_MM 800.0
+  #define DEFAULT_Z_STEPS_PER_MM 3200.0
+  #define DEFAULT_X_MAX_RATE 1200.0 // mm/min
+  #define DEFAULT_Y_MAX_RATE 1200.0 // mm/min
+  #define DEFAULT_Z_MAX_RATE 300.0 // mm/min
+  #define DEFAULT_X_ACCELERATION (80.0*60*60) // 80*60*60 mm/min^2 = 80 mm/sec^2
+  #define DEFAULT_Y_ACCELERATION (80.0*60*60) // 80*60*60 mm/min^2 = 80 mm/sec^2
+  #define DEFAULT_Z_ACCELERATION (250.0*60*60) // 250*60*60 mm/min^2 = 250 mm/sec^2
+  #define DEFAULT_X_MAX_TRAVEL 314.0 // mm
+  #define DEFAULT_Y_MAX_TRAVEL 404.0 // mm
+  #define DEFAULT_Z_MAX_TRAVEL 112.0 // mm
+  #define DEFAULT_SPINDLE_RPM_MAX 24000.0 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 1000.0 // rpm
+  #define DEFAULT_STEP_PULSE_MICROSECONDS 10
+  #define DEFAULT_STEPPING_INVERT_MASK 0
+  #define DEFAULT_DIRECTION_INVERT_MASK 3
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STATUS_REPORT_MASK 1 // MPos enabled
+  #define DEFAULT_JUNCTION_DEVIATION 0.01 // mm
+  #define DEFAULT_ARC_TOLERANCE 0.001 // mm
+  #define DEFAULT_REPORT_INCHES 0 // false
+  #define DEFAULT_INVERT_ST_ENABLE 0 // false
+  #define DEFAULT_INVERT_LIMIT_PINS 1 // false
+  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // false
+  #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
+  #define DEFAULT_INVERT_PROBE_PIN 0 // false
+  #define DEFAULT_LASER_MODE 0 // false
+  #define DEFAULT_HOMING_ENABLE 1  // false
+  #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
+  #define DEFAULT_HOMING_FEED_RATE 50.0 // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 500.0 // mm/min
+  #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
+  #define DEFAULT_HOMING_PULLOFF 2.0 // mm
+  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  // CNCx2 800W
+  #define N_PIECES 4
+  #define RPM_MAX 24000
+  #define RPM_MIN 1000
+  #define RPM_POINT12 1013.5
+  #define RPM_POINT23 6746.4
+  #define RPM_POINT34 13402.7
+  #define RPM_LINE_A1 1.000000e-02
+  #define RPM_LINE_B1 -9.865427e+00
+  #define RPM_LINE_A2 1.046588e-02
+  #define RPM_LINE_B2 -9.393282e+00
+  #define RPM_LINE_A3 1.051636e-02
+  #define RPM_LINE_B3 -9.052692e+00
+  #define RPM_LINE_A4 9.995496e-03
+  #define RPM_LINE_B4 -1.603367e+01
+#endif
+
+#ifdef DEFAULTS_STORM_300W
   // Grbl generic default settings. Should work across different machines.
   #define DEFAULT_X_STEPS_PER_MM 3200.0
   #define DEFAULT_Y_STEPS_PER_MM 3200.0
@@ -62,8 +116,81 @@
   #define DEFAULT_HOMING_FEED_RATE 30.0 // mm/min
   #define DEFAULT_HOMING_SEEK_RATE 400.0 // mm/min
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
-  #define DEFAULT_HOMING_PULLOFF 2.0 // mm
+  #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
+  //Strom 755 
+  // #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
+  #define RPM_MAX 14277.4 // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
+  #define RPM_POINT12  6342.1  // Used N_PIECES >=2. Junction point between lines 1 and 2.
+  #define RPM_MIN 5652.0  // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
+  #define RPM_POINT12 6342.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
+  #define RPM_POINT23 11395.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
+  #define RPM_POINT34 13445.6  // Used N_PIECES = 4. Junction point between lines 3 and 4.
+  #define RPM_LINE_A1 7.245251e-03  // Used N_PIECES >=1. A and B constants of line 1.
+  #define RPM_LINE_B1 2.595016e+01
+  #define RPM_LINE_A2 1.187414e-02  // Used N_PIECES >=2. A and B constants of line 2.
+  #define RPM_LINE_B2 5.530708e+01
+  #define RPM_LINE_A3 3.413841e-02  // Used N_PIECES >=3. A and B constants of line 3.
+  #define RPM_LINE_B3 3.090107e+02
+  #define RPM_LINE_A4 1.250303e-01  // Used N_PIECES = 4. A and B constants of line 4.
+  #define RPM_LINE_B4 1.531105e+03
 #endif
+
+#ifdef DEFAULTS_STORM_755
+  // Grbl generic default settings. Should work across different machines.
+  #define DEFAULT_X_STEPS_PER_MM 3200.0
+  #define DEFAULT_Y_STEPS_PER_MM 3200.0
+  #define DEFAULT_Z_STEPS_PER_MM 3200.0
+  #define DEFAULT_X_MAX_RATE 600.0 // mm/min
+  #define DEFAULT_Y_MAX_RATE 600.0 // mm/min
+  #define DEFAULT_Z_MAX_RATE 600.0 // mm/min
+  #define DEFAULT_X_ACCELERATION (100.0*60*60) // 10*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_Y_ACCELERATION (100.0*60*60) // 10*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_Z_ACCELERATION (100.0*60*60) // 10*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_X_MAX_TRAVEL 234.0 // mm
+  #define DEFAULT_Y_MAX_TRAVEL 196.0 // mm
+  #define DEFAULT_Z_MAX_TRAVEL 72.0 // mm
+  #define DEFAULT_SPINDLE_RPM_MAX 14200.0 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 7200.0  // rpm
+  #define DEFAULT_STEP_PULSE_MICROSECONDS 10
+  #define DEFAULT_STEPPING_INVERT_MASK 0
+  #define DEFAULT_DIRECTION_INVERT_MASK 2
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STATUS_REPORT_MASK 3 // MPos enabled
+  #define DEFAULT_JUNCTION_DEVIATION 0.01 // mm
+  #define DEFAULT_ARC_TOLERANCE 0.002 // mm
+  #define DEFAULT_REPORT_INCHES 0 // false
+  #define DEFAULT_INVERT_ST_ENABLE 0 // false
+  #define DEFAULT_INVERT_LIMIT_PINS 0 // false
+  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // false
+  #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
+  #define DEFAULT_INVERT_PROBE_PIN 0 // false
+  #define DEFAULT_LASER_MODE 0 // false
+  #define DEFAULT_HOMING_ENABLE 1  // false
+  #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
+  #define DEFAULT_HOMING_FEED_RATE 30.0 // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 400.0 // mm/min
+  #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
+  #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
+  //Strom 755 
+  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
+  #define RPM_MAX 14277.4 // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
+  #define RPM_POINT12  6342.1  // Used N_PIECES >=2. Junction point between lines 1 and 2.
+  #define RPM_MIN 5652.0  // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
+  #define RPM_POINT12 6342.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
+  #define RPM_POINT23 11395.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
+  #define RPM_POINT34 13445.6  // Used N_PIECES = 4. Junction point between lines 3 and 4.
+  #define RPM_LINE_A1 7.245251e-03  // Used N_PIECES >=1. A and B constants of line 1.
+  #define RPM_LINE_B1 2.595016e+01
+  #define RPM_LINE_A2 1.187414e-02  // Used N_PIECES >=2. A and B constants of line 2.
+  #define RPM_LINE_B2 5.530708e+01
+  #define RPM_LINE_A3 3.413841e-02  // Used N_PIECES >=3. A and B constants of line 3.
+  #define RPM_LINE_B3 3.090107e+02
+  #define RPM_LINE_A4 1.250303e-01  // Used N_PIECES = 4. A and B constants of line 4.
+  #define RPM_LINE_B4 1.531105e+03
+#endif
+
 #ifdef DEFAULTS_GENERIC
   // Grbl generic default settings. Should work across different machines.
   #define DEFAULT_X_STEPS_PER_MM 250.0
