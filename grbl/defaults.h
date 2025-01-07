@@ -95,8 +95,8 @@
   #define DEFAULT_X_MAX_TRAVEL 234.0 // mm
   #define DEFAULT_Y_MAX_TRAVEL 196.0 // mm
   #define DEFAULT_Z_MAX_TRAVEL 72.0 // mm
-  #define DEFAULT_SPINDLE_RPM_MAX 14200.0 // rpm
-  #define DEFAULT_SPINDLE_RPM_MIN 7200.0  // rpm
+  #define DEFAULT_SPINDLE_RPM_MAX 10300 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 1100 // rpm
   #define DEFAULT_STEP_PULSE_MICROSECONDS 10
   #define DEFAULT_STEPPING_INVERT_MASK 0
   #define DEFAULT_DIRECTION_INVERT_MASK 2
@@ -117,24 +117,23 @@
   #define DEFAULT_HOMING_SEEK_RATE 400.0 // mm/min
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
-  //Strom 755 
+  //Strom 300W 
   // #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
-  #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
-  #define RPM_MAX 14277.4 // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
-  #define RPM_POINT12  6342.1  // Used N_PIECES >=2. Junction point between lines 1 and 2.
-  #define RPM_MIN 5652.0  // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
-  #define RPM_POINT12 6342.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
-  #define RPM_POINT23 11395.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
-  #define RPM_POINT34 13445.6  // Used N_PIECES = 4. Junction point between lines 3 and 4.
-  #define RPM_LINE_A1 7.245251e-03  // Used N_PIECES >=1. A and B constants of line 1.
-  #define RPM_LINE_B1 2.595016e+01
-  #define RPM_LINE_A2 1.187414e-02  // Used N_PIECES >=2. A and B constants of line 2.
-  #define RPM_LINE_B2 5.530708e+01
-  #define RPM_LINE_A3 3.413841e-02  // Used N_PIECES >=3. A and B constants of line 3.
-  #define RPM_LINE_B3 3.090107e+02
-  #define RPM_LINE_A4 1.250303e-01  // Used N_PIECES = 4. A and B constants of line 4.
-  #define RPM_LINE_B4 1.531105e+03
-#endif
+  #define N_PIECES 4
+  #define RPM_MAX 10323.6
+  #define RPM_MIN 1109.2
+  #define RPM_POINT12 1682.6
+  #define RPM_POINT23 3815.4
+  #define RPM_POINT34 6311.2
+  #define RPM_LINE_A1 2.615974e-02
+  #define RPM_LINE_B1 2.401593e+01
+  #define RPM_LINE_A2 2.813245e-02
+  #define RPM_LINE_B2 2.733519e+01
+  #define RPM_LINE_A3 2.804645e-02
+  #define RPM_LINE_B3 2.700704e+01
+  #define RPM_LINE_A4 2.591953e-02
+  #define RPM_LINE_B4 1.358359e+01
+  #endif
 
 #ifdef DEFAULTS_STORM_755
   // Grbl generic default settings. Should work across different machines.
