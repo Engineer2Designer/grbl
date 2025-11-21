@@ -64,6 +64,7 @@
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm
   #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  // #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
   // CNCx2 800W
   #define N_PIECES 4
   #define RPM_MAX 24000
@@ -80,6 +81,63 @@
   #define RPM_LINE_A4 9.995496e-03
   #define RPM_LINE_B4 -1.603367e+01
 #endif
+
+#ifdef DEFAULTS_STORM_250W_Brushless
+  // Grbl generic default settings. Should work across different machines.
+  #define DEFAULT_X_STEPS_PER_MM 3200.0
+  #define DEFAULT_Y_STEPS_PER_MM 3200.0
+  #define DEFAULT_Z_STEPS_PER_MM 3200.0
+  #define DEFAULT_X_MAX_RATE 600.0 // mm/min
+  #define DEFAULT_Y_MAX_RATE 600.0 // mm/min
+  #define DEFAULT_Z_MAX_RATE 600.0 // mm/min
+  #define DEFAULT_X_ACCELERATION (100.0*60*60) // 10*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_Y_ACCELERATION (100.0*60*60) // 10*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_Z_ACCELERATION (100.0*60*60) // 10*60*60 mm/min^2 = 100 mm/sec^2
+  #define DEFAULT_X_MAX_TRAVEL 234.0 // mm
+  #define DEFAULT_Y_MAX_TRAVEL 196.0 // mm
+  #define DEFAULT_Z_MAX_TRAVEL 72.0 // mm
+  #define DEFAULT_SPINDLE_RPM_MAX 12000 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 1200 // rpm
+  #define DEFAULT_STEP_PULSE_MICROSECONDS 10
+  #define DEFAULT_STEPPING_INVERT_MASK 0
+  #define DEFAULT_DIRECTION_INVERT_MASK 2
+  #define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-254, 255 keeps steppers enabled)
+  #define DEFAULT_STATUS_REPORT_MASK 3 // MPos enabled
+  #define DEFAULT_JUNCTION_DEVIATION 0.01 // mm
+  #define DEFAULT_ARC_TOLERANCE 0.002 // mm
+  #define DEFAULT_REPORT_INCHES 0 // false
+  #define DEFAULT_INVERT_ST_ENABLE 0 // false
+  #define DEFAULT_INVERT_LIMIT_PINS 0 // false
+  #define DEFAULT_SOFT_LIMIT_ENABLE 1 // false
+  #define DEFAULT_HARD_LIMIT_ENABLE 1  // false
+  #define DEFAULT_INVERT_PROBE_PIN 0 // false
+  #define DEFAULT_LASER_MODE 0 // false
+  #define DEFAULT_HOMING_ENABLE 1  // false
+  #define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
+  #define DEFAULT_HOMING_FEED_RATE 30.0 // mm/min
+  #define DEFAULT_HOMING_SEEK_RATE 400.0 // mm/min
+  #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
+  #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
+  //Strom Brushless 250W 
+  // #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  // #define INVERT_SPINDLE_ENABLE_PIN // Default disabled. Uncomment to enable.
+  // #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
+  // #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
+  // #define N_PIECES 4
+  // #define RPM_MAX 10323.6
+  // #define RPM_MIN 1109.2
+  // #define RPM_POINT12 1682.6
+  // #define RPM_POINT23 3815.4
+  // #define RPM_POINT34 6311.2
+  // #define RPM_LINE_A1 2.615974e-02
+  // #define RPM_LINE_B1 2.401593e+01
+  // #define RPM_LINE_A2 2.813245e-02
+  // #define RPM_LINE_B2 2.733519e+01
+  // #define RPM_LINE_A3 2.804645e-02
+  // #define RPM_LINE_B3 2.700704e+01
+  // #define RPM_LINE_A4 2.591953e-02
+  // #define RPM_LINE_B4 1.358359e+01
+  #endif
 
 #ifdef DEFAULTS_STORM_300W
   // Grbl generic default settings. Should work across different machines.
@@ -118,7 +176,9 @@
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
   //Strom 300W 
-  // #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
+  #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
   #define N_PIECES 4
   #define RPM_MAX 10323.6
   #define RPM_MIN 1109.2
@@ -173,6 +233,8 @@
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
   //Strom 755 
   #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
+  #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
   #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
   #define RPM_MAX 14277.4 // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
   #define RPM_POINT12  6342.1  // Used N_PIECES >=2. Junction point between lines 1 and 2.

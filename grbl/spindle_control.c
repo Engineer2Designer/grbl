@@ -241,9 +241,9 @@ void spindle_stop()
     
     #if !defined(USE_SPINDLE_DIR_AS_ENABLE_PIN) && !defined(ENABLE_DUAL_AXIS)
       if (state == SPINDLE_ENABLE_CW) {
-        SPINDLE_DIRECTION_PORT &= ~(1<<SPINDLE_DIRECTION_BIT);
-      } else {
         SPINDLE_DIRECTION_PORT |= (1<<SPINDLE_DIRECTION_BIT);
+      } else {
+        SPINDLE_DIRECTION_PORT &= ~(1<<SPINDLE_DIRECTION_BIT);
       }
     #endif
   

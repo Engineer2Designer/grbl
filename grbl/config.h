@@ -34,7 +34,7 @@
 // NOTE: OEMs can avoid the need to maintain/update the defaults.h and cpu_map.h files and use only
 // one configuration file by placing their specific defaults and pin map at the bottom of this file.
 // If doing so, simply comment out these two defines and see instructions below.
-#define DEFAULTS_CNCx2
+#define DEFAULTS_STORM_250W_Brushless
 #define CPU_MAP_ATMEGA328P // Arduino Uno CPU
 
 // Serial baud rate
@@ -357,7 +357,7 @@
 // NOTE: BEWARE! The Arduino bootloader toggles the D13 pin when it powers up. If you flash Grbl with
 // a programmer (you can use a spare Arduino as "Arduino as ISP". Search the web on how to wire this.),
 // this D13 LED toggling should go away. We haven't tested this though. Please report how it goes!
-#define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
+// #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
 
 // Alters the behavior of the spindle enable pin with the USE_SPINDLE_DIR_AS_ENABLE_PIN option . By default,
 // Grbl will not disable the enable pin if spindle speed is zero and M3/4 is active, but still sets the PWM 
@@ -365,7 +365,7 @@
 // input. However, in some use cases, user may want the enable pin to disable with a zero spindle speed and 
 // re-enable when spindle speed is greater than zero. This option does that.
 // NOTE: Requires USE_SPINDLE_DIR_AS_ENABLE_PIN to be enabled.
- #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
+// #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
 
 // With this enabled, Grbl sends back an echo of the line it has received, which has been pre-parsed (spaces
 // removed, capitalized letters, no comments) and is to be immediately executed by Grbl. Echoes will not be

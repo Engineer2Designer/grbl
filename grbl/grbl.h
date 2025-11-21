@@ -23,7 +23,7 @@
 
 // Grbl versioning system
 #define GRBL_VERSION "1.1h"
-#define GRBL_VERSION_BUILD "20250617-CNCx2"
+#define GRBL_VERSION_BUILD "20250709-STORM_250W_Brushless"
 
 // Define standard libraries used by Grbl.
 #include <avr/io.h>
