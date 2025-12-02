@@ -5,3 +5,5 @@
 *.d
 .vscode
 README.md
+# But keep this specific file
+!uboot/urboot_atmega328p_ee_ce_hw.hex
