@@ -69,7 +69,7 @@ $(BUILDDIR)/%.o: $(SOURCEDIR)/%.c
 	$(COMPILE) -S $< -o $(BUILDDIR)/$@
 
 flash:	all
-	$(AVRDUDE) -U flash:w:grbl.hex:i -x title=E2D.tw-STORM_250W_Brushless
+	$(AVRDUDE) -U flash:w:grbl.hex:i -x title=E2D.tw-STORM_300W
 
 fuse:
 	$(AVRDUDE) $(FUSES)
