@@ -1,12 +1,11 @@
-!
-windows:
 
-  avrdude.exe -c usbasp -p m328p -P usb -F -v -e -U flash:w:"urboot_atmega328p_ee_ce_hw.hex":a 
 
-linux:
 
   avrdude -c usbasp -p m328p -P usb -F -v -e -U flash:w:"urboot_atmega328p_ee_ce_hw.hex":a
 
+  avrdude -c usbasp -p m328p -P usb -t
+
+  avrdude -c urclock -pm328p -P /dev/ttyACM0 -x showall
 
   https://github.com/stefanrueger/urboot
 
