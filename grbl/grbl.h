@@ -23,8 +23,7 @@
 
 // Grbl versioning system
 #define GRBL_VERSION "1.1h"
-#define GRBL_VERSION_BUILD "20251202-STORM_300W"
-
+#define GRBL_VERSION_BUILD "20260129-STORM_755"
 // Define standard libraries used by Grbl.
 #include <avr/io.h>
 #include <avr/pgmspace.h>
