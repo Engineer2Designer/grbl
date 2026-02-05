@@ -209,8 +209,8 @@
   #define DEFAULT_X_MAX_TRAVEL 234.0 // mm
   #define DEFAULT_Y_MAX_TRAVEL 196.0 // mm
   #define DEFAULT_Z_MAX_TRAVEL 72.0 // mm
-  #define DEFAULT_SPINDLE_RPM_MAX 14200.0 // rpm
-  #define DEFAULT_SPINDLE_RPM_MIN 7200.0  // rpm
+  #define DEFAULT_SPINDLE_RPM_MAX 14600 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 3200 // rpm
   #define DEFAULT_STEP_PULSE_MICROSECONDS 10
   #define DEFAULT_STEPPING_INVERT_MASK 0
   #define DEFAULT_DIRECTION_INVERT_MASK 2
@@ -232,24 +232,24 @@
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
   //Strom 755 
-  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
   #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
   #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
-  #define N_PIECES 4  // Integer (1-4). Number of piecewise lines used in script solution.
-  #define RPM_MAX 14277.4 // Max RPM of model. $30 > RPM_MAX will be limited to RPM_MAX.
-  #define RPM_POINT12  6342.1  // Used N_PIECES >=2. Junction point between lines 1 and 2.
-  #define RPM_MIN 5652.0  // Min RPM of model. $31 < RPM_MIN will be limited to RPM_MIN.
-  #define RPM_POINT12 6342.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
-  #define RPM_POINT23 11395.1  // Used N_PIECES >=3. Junction point between lines 2 and 3.
-  #define RPM_POINT34 13445.6  // Used N_PIECES = 4. Junction point between lines 3 and 4.
-  #define RPM_LINE_A1 7.245251e-03  // Used N_PIECES >=1. A and B constants of line 1.
-  #define RPM_LINE_B1 2.595016e+01
-  #define RPM_LINE_A2 1.187414e-02  // Used N_PIECES >=2. A and B constants of line 2.
-  #define RPM_LINE_B2 5.530708e+01
-  #define RPM_LINE_A3 3.413841e-02  // Used N_PIECES >=3. A and B constants of line 3.
-  #define RPM_LINE_B3 3.090107e+02
-  #define RPM_LINE_A4 1.250303e-01  // Used N_PIECES = 4. A and B constants of line 4.
-  #define RPM_LINE_B4 1.531105e+03
+  #define SPINDLE_PWM_MIN_VALUE 20 // Default disabled. Uncomment to enable. Must be greater than zero. Integer (1-255).
+  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define N_PIECES 4
+  #define RPM_MAX 14603.3
+  #define RPM_MIN 3273.1
+  #define RPM_POINT12 3273.1
+  #define RPM_POINT23 10324.6
+  #define RPM_POINT34 13346.4
+  #define RPM_LINE_A1 1.000000e-02
+  #define RPM_LINE_B1 1.273054e+01
+  #define RPM_LINE_A2 8.508773e-03
+  #define RPM_LINE_B2 7.849671e+00
+  #define RPM_LINE_A3 2.316504e-02
+  #define RPM_LINE_B3 1.591698e+02
+  #define RPM_LINE_A4 8.274455e-02
+  #define RPM_LINE_B4 9.543413e+02
 #endif
 
 #ifdef DEFAULTS_GENERIC

@@ -161,14 +161,14 @@ n_pieces = 4 # Number of line segments used for data fit. Only 1 to 4 line segme
 # NOTE: ** DO NOT USE DATA FROM AN EXISTING PIECEWISE LINE FIT. USE DEFAULT GRBL MODEL ONLY. **
 # PWM_set = np.array([2,18,36,55,73,91,109,127,146,164,182,200,218,237,254], dtype=float)
 
-PWM_set = np.array([5,18,36,55,73,91,109,127,146,164,182,200,218,237,254], dtype=float)
+PWM_set = np.array([20,28,36,55,73,91,109,127,146,164,182,200,218,237,254], dtype=float)
 
 # Actual RPM measured at the spindle. Must be in the ascending value and equal in length 
 # as the PWM_set array. Must include the min and max measured rpm output in the first and 
 # last array entries, respectively.
 # RPM_measured = np.array([213.,5420,7145,8282,9165,9765,10100,10500,10700,10900,11100,11250,11400,11550,11650], dtype=float)
 
-RPM_measured = np.array([1110,1600,2240,2950,3600,4150,4850,5510,6200,6870,7520,8160,8830,9950,10200], dtype=float)
+RPM_measured = np.array([3100,4200,5500,7500,8500,11300,12100,12400,12900,13400,13600,14100,14300,14400,14500], dtype=float)
 
 # Configure line fit points by 'S' programmed rpm or PWM value. Values must be between 
 # PWM_max and PWM_min. Typically, alter these values to space the points evenly between 
