@@ -153,8 +153,8 @@
   #define DEFAULT_X_MAX_TRAVEL 234.0 // mm
   #define DEFAULT_Y_MAX_TRAVEL 196.0 // mm
   #define DEFAULT_Z_MAX_TRAVEL 72.0 // mm
-  #define DEFAULT_SPINDLE_RPM_MAX 10300 // rpm
-  #define DEFAULT_SPINDLE_RPM_MIN 1100 // rpm
+  #define DEFAULT_SPINDLE_RPM_MAX 10200 // rpm
+  #define DEFAULT_SPINDLE_RPM_MIN 500 // rpm
   #define DEFAULT_STEP_PULSE_MICROSECONDS 10
   #define DEFAULT_STEPPING_INVERT_MASK 0
   #define DEFAULT_DIRECTION_INVERT_MASK 2
@@ -176,23 +176,24 @@
   #define DEFAULT_HOMING_DEBOUNCE_DELAY 25 // msec (0-65k)
   #define DEFAULT_HOMING_PULLOFF 2.0 // mm 
   //Strom 300W 
-  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
+  #define SPINDLE_PWM_MIN_VALUE 20
   #define USE_SPINDLE_DIR_AS_ENABLE_PIN // Default disabled. Uncomment to enable.
+  #define ENABLE_PIECEWISE_LINEAR_SPINDLE  // Default disabled. Uncomment to enable.
   #define SPINDLE_ENABLE_OFF_WITH_ZERO_SPEED // Default disabled. Uncomment to enable.
   #define N_PIECES 4
-  #define RPM_MAX 10323.6
-  #define RPM_MIN 1109.2
-  #define RPM_POINT12 1682.6
-  #define RPM_POINT23 3815.4
-  #define RPM_POINT34 6311.2
-  #define RPM_LINE_A1 2.615974e-02
-  #define RPM_LINE_B1 2.401593e+01
-  #define RPM_LINE_A2 2.813245e-02
-  #define RPM_LINE_B2 2.733519e+01
-  #define RPM_LINE_A3 2.804645e-02
-  #define RPM_LINE_B3 2.700704e+01
-  #define RPM_LINE_A4 2.591953e-02
-  #define RPM_LINE_B4 1.358359e+01
+  #define RPM_MAX 10242.7
+  #define RPM_MIN 504.5
+  #define RPM_POINT12 504.5
+  #define RPM_POINT23 2984.5
+  #define RPM_POINT34 5950.7
+  #define RPM_LINE_A1 1.000000e-02
+  #define RPM_LINE_B1 -1.495518e+01
+  #define RPM_LINE_A2 2.419322e-02
+  #define RPM_LINE_B2 -7.794968e+00
+  #define RPM_LINE_A3 2.359942e-02
+  #define RPM_LINE_B3 -9.567166e+00
+  #define RPM_LINE_A4 2.423135e-02
+  #define RPM_LINE_B4 -5.806754e+00
   #endif
 
 #ifdef DEFAULTS_STORM_755
